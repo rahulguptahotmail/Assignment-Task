@@ -43,6 +43,10 @@ const EditProduct = (props) => {
           category,
           price: newPrice,
           sellingPrice: newSellingPrice,
+        },{
+          headers: {
+            Authorization: `Bearer ${localStorage.getItem("token")}`,
+          },
         }
       )
       .then((res) => {

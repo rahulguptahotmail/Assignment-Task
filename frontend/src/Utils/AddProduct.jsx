@@ -33,6 +33,7 @@ const AddProduct = () => {
         .slice(1, sellingPrice.toString().length);
     else newSellingPrice = sellingPrice.toString();
 
+    console.log(localStorage.getItem('token'))
     await axios
       .post(`${process.env.REACT_APP_BACKEND_DOMAIN}/super-admin/add-product`, {
         title: name,
@@ -40,10 +41,9 @@ const AddProduct = () => {
         category,
         price: newPrice,
         sellingPrice: newSellingPrice,
-        headers: {
-          Authorization: `Bearer ${localStorage.getItem("token")}`,
-        }
-      })
+      }, {headers: {
+        Authorization: `Bearer ${localStorage.getItem("token")}`,
+      }})
       .then((res) => {
         setName("");
         setDescription("");

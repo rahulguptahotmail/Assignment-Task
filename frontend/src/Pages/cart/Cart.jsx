@@ -14,6 +14,8 @@ const Cart = () => {
       const response = await axios.post(
         `${process.env.REACT_APP_BACKEND_DOMAIN}/cart/remove-product`,
         { productId, userId: JSON.parse(localStorage.getItem("user"))._id,
+         
+         },{
           headers: {
             Authorization: `Bearer ${localStorage.getItem("token")}`,
           }
@@ -33,6 +35,8 @@ const Cart = () => {
         `${process.env.REACT_APP_BACKEND_DOMAIN}/cart/empty-cart`,
         {
           userId: JSON.parse(localStorage.getItem("user"))._id,
+         
+        },{
           headers: {
             Authorization: `Bearer ${localStorage.getItem("token")}`,
           },

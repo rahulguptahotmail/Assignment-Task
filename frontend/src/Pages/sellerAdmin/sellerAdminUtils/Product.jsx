@@ -15,6 +15,8 @@ const Product = (props) => {
         await axios.post(
           `${process.env.REACT_APP_BACKEND_DOMAIN}/seller-admin/update-product`,
           { productId:props._id, sellingPrice,
+            
+           },{
             headers: {
               Authorization: `Bearer ${localStorage.getItem("token")}`,
             }

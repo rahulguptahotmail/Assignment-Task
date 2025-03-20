@@ -13,6 +13,8 @@ const ManageUsers = () => {
       const response = await axios.post(
         `${process.env.REACT_APP_BACKEND_DOMAIN}/super-admin/update-user`,
         { id, role: users[index].role,
+          
+         },{
           headers: {
             Authorization: `Bearer ${localStorage.getItem("token")}`,
           }

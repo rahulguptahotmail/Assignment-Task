@@ -71,6 +71,7 @@ const ManageProducts = () => {
               <th>Product Name</th>
               <th>Category</th>
               <th>Price</th>
+              <th>Selling Price</th>
               <th>Actions</th>
             </tr>
           </thead>
@@ -82,6 +83,7 @@ const ManageProducts = () => {
                 <td>{product.title}</td>
                 <td>{product.category}</td>
                 <td>{product.price}</td>
+                <td>{product.sellingPrice}</td>
                 <td>
                   <Link
                     to={`/superadmin/manageproducts/editproduct/${product._id}`}

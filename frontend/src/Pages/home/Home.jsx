@@ -7,33 +7,38 @@ const Home = () => {
   const [products, setProducts] = useState([]);
   const [category, setCategory] = useState("");
 
-
-  const addCart = async (productId)=>{
+  const addCart = async (productId) => {
     try {
       await axios.post(
         `${process.env.REACT_APP_BACKEND_DOMAIN}/cart/add-product`,
-        {productId,userId:JSON.parse(localStorage.getItem('user'))._id , headers: {
-          Authorization: `Bearer ${localStorage.getItem("token")}`,
-        } }
+        { productId, userId: JSON.parse(localStorage.getItem("user"))._id },
+        {
+          headers: {
+            Authorization: `Bearer ${localStorage.getItem("token")}`,
+          },
+        }
       );
     } catch (error) {
-      navigate('/login')
+      navigate("/login");
       console.error(error);
     }
-  }
+  };
 
   useEffect(() => {
     document.title = "Jashma Info | Home";
     const fetchedProducts = async () => {
       try {
         const response = await axios.get(
-          `${process.env.REACT_APP_BACKEND_DOMAIN}/product/get-products`,{headers: {
-            Authorization: `Bearer ${localStorage.getItem("token")}`,
-          }}
+          `${process.env.REACT_APP_BACKEND_DOMAIN}/product/get-products`,
+          {
+            headers: {
+              Authorization: `Bearer ${localStorage.getItem("token")}`,
+            },
+          }
         );
         setProducts(response.data.products);
       } catch (error) {
-        navigate('/login')
+        navigate("/login");
         console.error(error);
       }
     };
@@ -68,7 +73,10 @@ const Home = () => {
                       <p>${product.sellingPrice}</p>
                     </div>
 
-                    <button onClick={()=>addCart(product._id)} className="btn btn-primary w-100">
+                    <button
+                      onClick={() => addCart(product._id)}
+                      className="btn btn-primary w-100"
+                    >
                       Add to Cart
                     </button>
                   </div>
@@ -85,7 +93,6 @@ const Home = () => {
         <div className="row mb-5">
           <div className="col-md-4">
             <div className="card category-card">
-             
               <h5 className="mt-3">Electronics</h5>
               <button
                 onClick={() => setCategory("Electronic")}
@@ -97,7 +104,6 @@ const Home = () => {
           </div>
           <div className="col-md-4">
             <div className="card category-card">
-            
               <h5 className="mt-3">Mobile</h5>
               <button
                 onClick={() => setCategory("Mobile")}
@@ -109,7 +115,6 @@ const Home = () => {
           </div>
           <div className="col-md-4">
             <div className="card category-card">
-              
               <h5 className="mt-3">Clothing</h5>
               <button
                 onClick={() => setCategory("Clothing")}
@@ -133,11 +138,13 @@ const Home = () => {
                       </div>
                       <p>{product.category}</p>
                       <div className=" d-flex justify-content-around">
-                        
                         <p>${product.sellingPrice}</p>
                       </div>
 
-                      <button onClick={(e)=>addCart(product._id)} className="btn btn-primary w-100">
+                      <button
+                        onClick={(e) => addCart(product._id)}
+                        className="btn btn-primary w-100"
+                      >
                         Add to Cart
                       </button>
                     </div>
