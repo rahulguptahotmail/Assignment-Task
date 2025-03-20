@@ -1,0 +1,19 @@
+.cart-item {
+    border-bottom: 1px solid #ddd;
+    padding: 15px 0;
+}
+.cart-item img {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+}
+.cart-total {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+.btn-remove {
+    color: red;
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+}

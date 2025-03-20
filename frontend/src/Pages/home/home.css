@@ -1,0 +1,43 @@
+.hero-section {
+    background: url('https://via.placeholder.com/1920x700') no-repeat center center;
+    background-size: cover;
+    color: white;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.product-card {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-bottom: 30px;
+}
+
+.category-card {
+    text-align: center;
+    padding: 20px;
+    border: 1px solid #ddd;
+    margin-bottom: 30px;
+}
+
+.category-card img {
+    width: 80%;
+    height: 150px;
+    object-fit: contain;
+}
+
+.footer {
+    background-color: #343a40;
+    color: white;
+    padding: 30px 0;
+    text-align: center;
+}
+
+.footer a {
+    color: #f8f9fa;
+}
+
+.footer a:hover {
+    text-decoration: underline;
+}

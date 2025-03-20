@@ -1,0 +1,33 @@
+.navbar {
+    background-color: #343a40; /* Dark background for the navbar */
+    
+}
+.navbar-brand {
+    color: white;
+}
+.navbar-nav .nav-link {
+    color: white;
+}
+.navbar-nav .nav-link:hover {
+    color: #f8f9fa; /* Lighter color on hover */
+    background-color: red;
+    border-radius: 20px;
+}
+.navbar-nav .nav-link:active {
+    color: #f8f9fa; /* Lighter color on hover */
+    background-color: rgba(130, 163, 45, 0.336);
+    border-radius: 20px;
+}
+.navbar-toggler-icon {
+    background-color: white;
+}
+
+h1 {
+    color: #343a40;
+}
+p {
+    color: #6c757d;
+}
+.height-manage{
+    height: 75px;
+}
